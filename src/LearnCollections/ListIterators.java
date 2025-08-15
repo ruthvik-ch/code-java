@@ -15,17 +15,14 @@ public class ListIterators {
         vehicles.add("Limo");
         System.out.println(vehicles);
         // loop over
-
         //1
         for(int i=0; i< cars.size(); i++){
             System.out.println(cars.get(i));
         }
-
         //2
         for(String car : cars){
             System.out.println(car);
         }
-
         //3
         Iterator<String> it = cars.iterator();
         while(it.hasNext()){

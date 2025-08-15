@@ -23,6 +23,21 @@ public class LearnList {
 
         list.contains(200);
 
+        List<String> cars = new ArrayList<>();
+
+        cars.add("Virtus");
+        cars.add("Slavia");
+        cars.add("Verna");
+
+        List<String> vehicles = new ArrayList<>();
+        vehicles = cars.subList(1,2);
+        //vehicles.add("Limo");
+
+        System.out.println(cars.containsAll(vehicles)  );
+
+        System.out.println(vehicles);
+
+        System.out.println(vehicles.contains("Limo"));
 
 
     }
