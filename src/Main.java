@@ -1,3 +1,5 @@
+import Basics.Singleton;
+
 import java.util.*;
 
 // Abstraction: Abstract class Person
@@ -8,8 +10,9 @@ abstract class Person {
     public Person(String name, int age) { // name and age in constructor
         this.name = name;
         this.age = age;
-    }
+    };
 
+    public abstract void eat();
     // Encapsulation: getters and setters
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -35,7 +38,9 @@ class Employee extends Person {
         this.empRole = empRole;
         this.salary = salary;
     }
-
+    public void eat(){
+        System.out.println("Emp eating");
+    }
     // Encapsulation: getters and setters
     public int getEmpId() { return empId; }
     public void setEmpId(int empId) { this.empId = empId; }
@@ -98,12 +103,22 @@ public class Main {
         Employee emp = new Employee("Ruth", 20, 101, "Developer", 50000);
         Manager mgr = new Manager("Fury", 30, 201, "Lead", 80000, 5);
 
+        Person p1 = new Person("Ruth", 23){
+            @Override
+            public void eat() {
+            }
+        };
+
         System.out.println(emp.toString());
         System.out.println("Role: " + emp.getRole());
 
         System.out.println(mgr.toString());
         System.out.println("Role: " + mgr.getRole());
 
-        Singleton s1 = new Singleton();
+        Singleton s1 =  Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+        Singleton s3 = Singleton.getInstance();
+        System.out.println(Singleton.getObjectsCreated());
+
     }
 }
