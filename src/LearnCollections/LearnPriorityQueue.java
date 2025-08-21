@@ -10,8 +10,8 @@ public class LearnPriorityQueue {
         p1.offer(10);
         p1.offer(19);
         p1.offer(1);
-        p1.peek();
-        p1.poll();
+        System.out.println(p1.peek());
+        System.out.println(p1.poll());
         System.out.println(p1);
     }
 }
